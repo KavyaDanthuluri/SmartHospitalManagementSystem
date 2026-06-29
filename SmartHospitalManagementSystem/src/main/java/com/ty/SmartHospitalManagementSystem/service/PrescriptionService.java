@@ -1,0 +1,104 @@
+package com.ty.SmartHospitalManagementSystem.service;
+
+import com.ty.SmartHospitalManagementSystem.dto.response.PrescriptionResponseDTO;
+import com.ty.SmartHospitalManagementSystem.dto.request.PrescriptionRequestDTO;
+import com.ty.SmartHospitalManagementSystem.entity.Appointment;
+import com.ty.SmartHospitalManagementSystem.entity.Prescription;
+import com.ty.SmartHospitalManagementSystem.exception.ResourceAlreadyExistsException;
+import com.ty.SmartHospitalManagementSystem.exception.ResourceNotFoundException;
+import com.ty.SmartHospitalManagementSystem.repository.AppointmentRepository;
+import com.ty.SmartHospitalManagementSystem.repository.PrescriptionRepository;
+import com.ty.SmartHospitalManagementSystem.utility.ResponseStructure;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+
+@Service
+public class PrescriptionService {
+
+    @Autowired
+    private PrescriptionRepository prescriptionRepository;
+
+    @Autowired
+    private AppointmentRepository appointmentRepository;
+
+    //Add prescription
+    public ResponseEntity<ResponseStructure<PrescriptionResponseDTO>> savePrescription(PrescriptionRequestDTO prescription) throws ResourceAlreadyExistsException,ResourceNotFoundException{
+        Prescription prescription1=new Prescription();
+        prescription1.setId(prescription.getId());
+        prescription1.setDiagnosis(prescription.getDiagnosis());
+        prescription1.setInstructions(prescription.getInstructions());
+        prescription1.setMedicines(prescription.getMedicines());
+        Optional<Appointment> appointment=appointmentRepository.findById(prescription.getAppointmentId());
+        if(appointment.isPresent()){
+            if(!(prescriptionRepository.existsByAppointment(appointment.get()))){
+                prescription1.setAppointment(appointment.get());
+            }
+            else {
+                throw new ResourceAlreadyExistsException("Duplicate appointment");
+            }
+        }
+        else{
+            throw new ResourceNotFoundException("Appointment not found");
+        }
+        Prescription savedPrescription=prescriptionRepository.save(prescription1);
+        return mapToResponse(savedPrescription);
+    }
+
+    public ResponseEntity<ResponseStructure<PrescriptionResponseDTO>> mapToResponse(Prescription savedPrescription) {
+        PrescriptionResponseDTO dto=new PrescriptionResponseDTO();
+        dto.setId(savedPrescription.getId());
+        dto.setDiagnosis(savedPrescription.getDiagnosis());
+        dto.setMedicines(savedPrescription.getMedicines());
+        dto.setInstructions(savedPrescription.getInstructions());
+        dto.setAppointmentDate(savedPrescription.getAppointment().getAppointmentDate());
+        dto.setAppointmentStatus(savedPrescription.getAppointment().getStatus().name());
+        ResponseStructure<PrescriptionResponseDTO> rs=new ResponseStructure<>();
+        rs.setStatusCode(HttpStatus.OK.value());
+        rs.setMessage("Success");
+        rs.setData(dto);
+        return new ResponseEntity<ResponseStructure<PrescriptionResponseDTO>>(rs, HttpStatus.OK);
+    }
+
+    //update prescription
+    public ResponseEntity<ResponseStructure<PrescriptionResponseDTO>> updatePrescription(PrescriptionRequestDTO prescription){
+        Prescription prescription1=new Prescription();
+        prescription1.setId(prescription.getId());
+        prescription1.setDiagnosis(prescription.getDiagnosis());
+        prescription1.setInstructions(prescription.getInstructions());
+        prescription1.setMedicines(prescription.getMedicines());
+        Appointment appointment=appointmentRepository.findById(prescription.getAppointmentId()).orElse(null);
+        prescription1.setAppointment(appointment);
+        Prescription savedPrescription=prescriptionRepository.save(prescription1);
+        return mapToResponse(savedPrescription);
+    }
+    //delete prescription
+    public ResponseEntity<ResponseStructure<String>> deletePrescription(int id){
+        ResponseStructure<String > rs=new ResponseStructure<>();
+        Optional<Prescription> optional = prescriptionRepository.findById(id);
+        if(optional.isPresent()) {
+            rs.setStatusCode(HttpStatus.OK.value());
+            rs.setMessage("Success");
+            prescriptionRepository.deleteById(id);
+            rs.setData("Prescription deleted succesfully");
+        }
+        else {
+            throw new ResourceNotFoundException("Prescription doesn't exists");
+        }
+        return new ResponseEntity<ResponseStructure<String>>(rs,HttpStatus.OK);
+    }
+    //fetch prescription by id
+    public ResponseEntity<ResponseStructure<PrescriptionResponseDTO>> findPrescription(int id) throws ResourceNotFoundException {
+        Optional<Prescription> optional=prescriptionRepository.findById(id);
+        if(optional.isPresent()){
+            return mapToResponse(optional.get());
+        }
+        else{
+            throw new ResourceNotFoundException("Prescription Not exists");
+        }
+    }
+
+}
