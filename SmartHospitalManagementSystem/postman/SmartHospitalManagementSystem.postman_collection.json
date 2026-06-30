@@ -1,0 +1,1093 @@
+{
+  "info": {
+    "_postman_id": "0fad0aac-ce77-439d-b06c-0725fc903eb7",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52061171",
+    "_collection_link": "https://go.postman.co/collection/52061171-0fad0aac-ce77-439d-b06c-0725fc903eb7?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "HospitalManagementSystem",
+      "item": [
+        {
+          "name": "Patient",
+          "item": [
+            {
+              "name": "saveAll Patients",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\r\n    {\r\n        \"id\":210,\r\n        \"name\":\"Suresh\",\r\n        \"address\":\"Erragada,Hyderabad\",\r\n        \"age\":35,\r\n        \"email\":\"Suresh@gmail.com\",\r\n        \"gender\":\"male\",\r\n        \"phone\":\"8523697415\"\r\n\r\n    },\r\n    {\r\n        \"id\":211,\r\n        \"name\":\"Ravali\",\r\n        \"address\":\"ESI,Hyderabad\",\r\n        \"age\":28,\r\n        \"email\":\"ravali@gmail.com\",\r\n        \"gender\":\"Female\",\r\n        \"phone\":\"7896541235\"\r\n\r\n    },\r\n    {\r\n        \"id\":212,\r\n        \"name\":\"Kiran\",\r\n        \"address\":\"IDPL,Hyderabad\",\r\n        \"age\":45,\r\n        \"email\":\"kiran@gmail.com\",\r\n        \"gender\":\"Female\",\r\n        \"phone\":\"6398521472\"\r\n\r\n    },\r\n    {\r\n        \"id\":213,\r\n        \"name\":\"Anuja\",\r\n        \"address\":\"Maisammaguda,Hyderabad\",\r\n        \"age\":27,\r\n        \"email\":\"anuja@gmail.com\",\r\n        \"gender\":\"Female\",\r\n        \"phone\":\"7765832584\"\r\n\r\n    },\r\n    {\r\n        \"id\":214,\r\n        \"name\":\"Sahithi\",\r\n        \"address\":\"Irrumanzil,Hyderabad\",\r\n        \"age\":45,\r\n        \"email\":\"sahithi@gmail.com\",\r\n        \"gender\":\"Female\",\r\n        \"phone\":\"6895324712\"\r\n\r\n    },\r\n    {\r\n        \"id\":215,\r\n        \"name\":\"Usha\",\r\n        \"address\":\"Ameerpet,Hyderabad\",\r\n        \"age\":27,\r\n        \"email\":\"usha@gmail.com\",\r\n        \"gender\":\"Female\",\r\n        \"phone\":\"7415632835\"\r\n\r\n    },\r\n    {\r\n        \"id\":216,\r\n        \"name\":\"Sudheer\",\r\n        \"address\":\"SR Nagar,Hyderabad\",\r\n        \"age\":43,\r\n        \"email\":\"sudheer@gmail.com\",\r\n        \"gender\":\"Female\",\r\n        \"phone\":\"8865329632\"\r\n\r\n    }\r\n\r\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/patient/saveAll",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "patient",
+                    "saveAll"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "savePatient",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n        \"id\":209,\r\n        \"name\":\"Sudheer\",\r\n        \"address\":\"SR Nagar,Hyderabad\",\r\n        \"age\":43,\r\n        \"email\":\"sudheerr@gmail.com\",\r\n        \"gender\":\"Female\",\r\n        \"phone\":\"8865329633\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/patient/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "patient",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deletePatient",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/patient/delete/209",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "patient",
+                    "delete",
+                    "209"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewById",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/patient/viewById/204",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "patient",
+                    "viewById",
+                    "204"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updatePatient",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n        \"id\":209,\r\n        \"name\":\"Sudheer\",\r\n        \"address\":\"SR Nagar,Hyderabad\",\r\n        \"age\":43,\r\n        \"email\":\"sudheer@gmail.com\",\r\n        \"gender\":\"Female\",\r\n        \"phone\":\"8865329632\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/patient/update",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "patient",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewAll",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/patient/viewAll",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "patient",
+                    "viewAll"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewByName",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/patient/viewByName/Ramesh",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "patient",
+                    "viewByName",
+                    "Ramesh"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Appointment",
+          "item": [
+            {
+              "name": "saveAppointment",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":307,\r\n    \"status\":\"COMPLETED\",\r\n    \"doctorId\":105,\r\n    \"patientId\":208\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/appointment/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "appointment",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleteAppointment",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/appointment/delete/307",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "appointment",
+                    "delete",
+                    "307"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "saveAllAppointments",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\r\n    {\r\n        \"id\":30,\r\n        \"status\":\"Scheduled\",\r\n        \"doctorId\":103,\r\n        \"patientId\":203\r\n    },\r\n    {\r\n        \"id\":31,\r\n        \"status\":\"Confirmed\",\r\n        \"doctorId\":107,\r\n        \"patientId\":207\r\n    },\r\n    {\r\n        \"id\":32,\r\n        \"status\":\"Rescheduled\",\r\n        \"doctorId\":107,\r\n        \"patientId\":204\r\n    }\r\n    \r\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/appointment/saveAll",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "appointment",
+                    "saveAll"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewAll",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/appointment/viewAll",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "appointment",
+                    "viewAll"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewByDoctor",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/appointment/viewByDoctor/107",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "appointment",
+                    "viewByDoctor",
+                    "107"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewByPatient",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/appointment/viewByPatient/2080",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "appointment",
+                    "viewByPatient",
+                    "2080"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updateAppointment",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":307,\r\n    \"status\":\"SCHEDULED\",\r\n    \"doctorId\":101,\r\n    \"patientId\":201\r\n    \r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/appointment/update",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "appointment",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewById",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/appointment/viewById/307",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "appointment",
+                    "viewById",
+                    "307"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Prescription",
+          "item": [
+            {
+              "name": "savePrescription",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":404,\r\n    \"diagnosis\": \"Iron Deficiency Anemia\",\r\n    \"medicines\": \"Iron Folic Acid Tablets, Calcium Tablets\",\r\n    \"instructions\": \"Take iron tablets after meals, consume iron-rich foods, avoid tea or coffee immediately after medication, and follow up after 2 weeks.\",\r\n    \"appointmentId\":303\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/prescription/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "prescription",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deletePrescription",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/prescription/delete/4040",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "prescription",
+                    "delete",
+                    "4040"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewPrescription",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/prescription/view/4040",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "prescription",
+                    "view",
+                    "4040"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updatePrescription",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":404,\r\n    \"diagnosis\": \"Iron Deficiency Anemiaaaaaaaaaaa\",\r\n    \"medicines\": \"Iron Folic Acid Tablets, Calcium Tablets\",\r\n    \"instructions\": \"Take iron tablets after meals, consume iron-rich foods, avoid tea or coffee immediately after medication, and follow up after 2 weeks.Thank you\",\r\n    \"appointmentId\":303\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/prescription/update",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "prescription",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Billing",
+          "item": [
+            {
+              "name": "saveBill",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":504,\r\n    \"amount\": 1200.00,\r\n    \"paymentStatus\": \"PAID\",\r\n    \"paymentMethod\": null,\r\n    \"patientId\":207\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/billing/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "billing",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewBill",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/billing/view/502",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "billing",
+                    "view",
+                    "502"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updateBill",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":504,\r\n    \"amount\": 1200.00,\r\n    \"paymentStatus\": \"PENDINnnnnG\",\r\n    \"paymentMethod\": \"CARD\",\r\n    \"patientId\":207\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/billing/update",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "billing",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleteBill",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":503,\r\n    \"amount\": 1200.00,\r\n    \"paymentStatus\": \"PENDING\",\r\n    \"paymentMethod\": \"CARD\",\r\n    \"patient\":{\r\n        \"id\":207\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/billing/delete/504",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "billing",
+                    "delete",
+                    "504"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewAllBills",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/billing/viewAll",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "billing",
+                    "viewAll"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Doctor",
+          "item": [
+            {
+              "name": "viewDoctor",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/doctor/viewById/1050",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "doctor",
+                    "viewById",
+                    "1050"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "saveDoctor",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":109,\r\n    \"name\":\"Dr.Kavya\",\r\n    \"email\":\"robo@gmail.com\",\r\n    \"specialization\":\"Lead\",\r\n    \"experience\":3,\r\n    \"consultationFee\":200,\r\n    \"departmentId\":8\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/doctor/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "doctor",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "saveAllDoctors",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\r\n    {\r\n        \"id\":11,\r\n        \"name\":\"Dr.Kavya\",\r\n        \"email\":\"kavya@gmail.com\",\r\n        \"specialization\":\"Lead\",\r\n        \"experience\":3,\r\n        \"consultationFee\":200,\r\n        \"departmentId\":8\r\n    },\r\n    {\r\n        \"id\":12,\r\n        \"name\":\"Dr.Kavya\",\r\n        \"email\":\"kavya@gmail.com\",\r\n        \"specialization\":\"Lead\",\r\n        \"experience\":3,\r\n        \"consultationFee\":200,\r\n        \"departmentId\":8\r\n    },\r\n    {\r\n        \"id\":13,\r\n        \"name\":\"Dr.Kavya\",\r\n        \"email\":\"kavya@gmail.com\",\r\n        \"specialization\":\"Lead\",\r\n        \"experience\":3,\r\n        \"consultationFee\":200,\r\n        \"departmentId\":8\r\n    }\r\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/doctor/saveAll",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "doctor",
+                    "saveAll"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewAllDoctors",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/doctor/viewAll",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "doctor",
+                    "viewAll"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updateDoctor",
+              "request": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":10,\r\n    \"name\":\"Dr.KavyaReddy\",\r\n    \"email\":\"kavya@gmail.com\",\r\n    \"specialization\":\"Lead\",\r\n    \"experience\":3,\r\n    \"consultationFee\":200,\r\n    \"departmentId\":8\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/doctor/update",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "doctor",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleteDoctor",
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":10,\r\n    \"name\":\"Dr.KavyaReddy\",\r\n    \"email\":\"kavya@gmail.com\",\r\n    \"specialization\":\"Lead\",\r\n    \"experience\":3,\r\n    \"consultationFee\":200,\r\n    \"departmentId\":8\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/doctor/delete/9",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "doctor",
+                    "delete",
+                    "9"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewByEmail",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":10,\r\n    \"name\":\"Dr.KavyaReddy\",\r\n    \"email\":\"kavya@gmail.com\",\r\n    \"specialization\":\"Lead\",\r\n    \"experience\":3,\r\n    \"consultationFee\":200,\r\n    \"departmentId\":8\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/doctor/viewByEmail/robo@gmail.com",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "doctor",
+                    "viewByEmail",
+                    "robo@gmail.com"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewByDepartment",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/doctor/viewByDepartment/Neurology",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "doctor",
+                    "viewByDepartment",
+                    "Neurology"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Department",
+          "item": [
+            {
+              "name": "saveDepartment",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":9,\r\n    \"departmentName\":\"Laziology\",\r\n    \"description\":\"Lazy doctor\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/department/save",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "department",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "saveAllDepartments",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\r\n    {\r\n        \"id\":10,\r\n        \"departmentName\":\"Laziology\",\r\n        \"description\":\"Lazy doctor\"\r\n    },\r\n    {\r\n        \"id\":11,\r\n        \"departmentName\":\"Laziology\",\r\n        \"description\":\"Lazy doctor\"\r\n    }\r\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/department/saveAll",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "department",
+                    "saveAll"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "updateDepartment",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":9,\r\n    \"departmentName\":\"LaziologyDoctor\",\r\n    \"description\":\"Lazy doctor\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/department/update",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "department",
+                    "update"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewDepartment",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":9,\r\n    \"departmentName\":\"LaziologyDoctor\",\r\n    \"description\":\"Lazy doctor\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/department/view/11",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "department",
+                    "view",
+                    "11"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "viewAllDepartments",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":9,\r\n    \"departmentName\":\"LaziologyDoctor\",\r\n    \"description\":\"Lazy doctor\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/department/viewAll",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "department",
+                    "viewAll"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "deleteDepartment",
+              "request": {
+                "auth": {
+                  "type": "noauth"
+                },
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"id\":9,\r\n    \"departmentName\":\"LaziologyDoctor\",\r\n    \"description\":\"Lazy doctor\"\r\n}"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/department/delete/9",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "department",
+                    "delete",
+                    "9"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
