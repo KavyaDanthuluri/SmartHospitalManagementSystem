@@ -53,7 +53,7 @@
                 "header": [],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n        \"id\":209,\r\n        \"name\":\"Sudheer\",\r\n        \"address\":\"SR Nagar,Hyderabad\",\r\n        \"age\":43,\r\n        \"email\":\"sudheerr@gmail.com\",\r\n        \"gender\":\"Female\",\r\n        \"phone\":\"8865329633\"\r\n\r\n}",
+                  "raw": "{\r\n        \"id\":209,\r\n        \"name\":\"Sudheer\",\r\n        \"address\":\"SR Nagar,Hyderabad\",\r\n        \"age\":43,\r\n        \"email\":\"sudheerr@gmail.com\",\r\n        \"gender\":\"Male\",\r\n        \"phone\":\"8865329633\"\r\n\r\n}",
                   "options": {
                     "raw": {
                       "language": "json"
