@@ -2,8 +2,6 @@
 -- PostgreSQL database dump
 --
 
-\restrict D2lJi7z9JzsrkIsIIpykAZvw8nRlIvZ0e1HJG3ubA95Y6rbmsdUgmd2Q9Xogcym
-
 -- Dumped from database version 18.1
 -- Dumped by pg_dump version 18.1
 
@@ -238,5 +236,4 @@ ALTER TABLE ONLY public.billing
 -- PostgreSQL database dump complete
 --
 
-\unrestrict D2lJi7z9JzsrkIsIIpykAZvw8nRlIvZ0e1HJG3ubA95Y6rbmsdUgmd2Q9Xogcym
 
