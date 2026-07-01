@@ -49,7 +49,7 @@ This project follows a layered architecture with DTO-based request/response hand
 
 ## Technologies Used
 
-- Java 17
+- Java 21
 - Spring Boot
 - Spring Data JPA (Hibernate)
 - PostgreSQL
